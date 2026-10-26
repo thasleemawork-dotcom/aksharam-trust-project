@@ -1,0 +1,470 @@
+* {
+  box-sizing: border-box;
+}
+
+.accounts-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5f7fa;
+  color: #252b35;
+}
+
+/* ================================
+   ACCOUNTS PAGE LAYOUT
+================================ */
+
+.accounts-page-content {
+  min-height: calc(100vh - 78px);
+  padding: 25px;
+  background: #f3f9fd;
+}
+
+.accounts-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ================================
+   SHARED NAVBAR
+================================ */
+
+.donations-navbar {
+  min-height: 78px;
+  padding: 10px 28px;
+  background: #075b98;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 70, 120, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.donations-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.donations-brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.donations-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.donations-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.donations-nav-btn span:first-child {
+  font-size: 18px;
+}
+
+.donations-nav-btn:hover,
+.donations-nav-btn.active {
+  background: #0ba8e8;
+  color: #fff;
+}
+
+/* ================================
+   RESPONSIVE NAVBAR
+================================ */
+
+@media (max-width: 600px) {
+  .donations-navbar {
+    padding: 10px 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .donations-nav-menu {
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .donations-nav-btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .accounts-page-content {
+    padding: 12px;
+  }
+}
+
+/* Header */
+
+.accounts-header {
+  max-width: 1500px;
+  margin: auto;
+  padding: 25px 30px;
+  background: white;
+  border: 1px solid #e2e6eb;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accounts-header h1 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.accounts-header p {
+  margin: 6px 0 0;
+  color: #7b8490;
+  font-size: 14px;
+}
+
+/* Financial Year */
+
+.financial-year label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #68727f;
+}
+
+.year-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.year-inputs input {
+  width: 90px;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #d7dce2;
+  border-radius: 6px;
+}
+
+.year-inputs span {
+  color: #777f8a;
+}
+
+/* Amount */
+
+.amount-card {
+  max-width: 1500px;
+  margin: 20px auto;
+  padding: 22px 28px;
+
+  background: white;
+  border: 1px solid #e2e6eb;
+  border-radius: 10px;
+}
+
+.amount-card span {
+  font-size: 13px;
+  color: #737d89;
+}
+
+.amount-card h2 {
+  margin: 7px 0 0;
+  font-size: 25px;
+}
+
+/* Month */
+
+.month-section {
+  max-width: 1500px;
+  margin: 25px auto 15px;
+}
+
+.month-section h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Balance */
+
+.balance-section {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.balance-box {
+  width: 300px;
+}
+
+.balance-box label,
+.handling-box label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #626c78;
+}
+
+.balance-box input,
+.handling-box input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d8dde3;
+  border-radius: 6px;
+  outline: none;
+}
+
+.balance-box input:focus,
+.handling-box input:focus {
+  border-color: #596575;
+}
+
+/* Transaction Section */
+
+.transaction-section {
+  max-width: 1500px;
+  margin: 25px auto;
+  background: white;
+  border: 1px solid #e3edf5;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(30, 75, 110, 0.04);
+
+}
+
+.section-header {
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e8ec;
+}
+
+.section-header h2 {
+  margin: 0 0 7px;
+  color: #075b98;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section-header p {
+  margin: 0;
+  color: #7a8fa1;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Add Button */
+
+.add-button {
+  border: none;
+  background: #293440;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.add-button:hover {
+  background: #1f2831;
+}
+
+/* Table */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.accounts-table {
+  width: 100%;
+  min-width: 1250px;
+  border-collapse: collapse;
+}
+
+.accounts-table th {
+  padding: 15px;
+  border-bottom: 1px solid #dcebf6;
+  color: #075b98;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  white-space: nowrap;
+}
+
+.accounts-table td {
+  padding: 7px;
+  border-bottom: 1px solid #e8ebee;
+  
+}
+
+.accounts-table td input {
+  width: 100%;
+  height: 36px;
+  padding: 0 8px;
+
+  border: 1px solid #e0e4e8;
+  border-radius: 5px;
+
+  font-size: 12px;
+  outline: none;
+}
+
+.accounts-table td input:focus {
+  border-color: #7a8490;
+}
+
+.row-number {
+  text-align: center;
+  color: #7b8490;
+}
+
+/* Delete */
+
+.delete-button {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #f3f4f5;
+  color: #777;
+
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #e9eaec;
+  color: #333;
+}
+
+/* Table Footer */
+
+.accounts-table tfoot td {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+.total-label {
+  text-align: right;
+  color: #4d5764;
+}
+
+.income-total {
+  color: #278052;
+}
+
+.expense-total {
+  color: #c64a4a;
+}
+
+/* Bank / Cash */
+
+.handling-section {
+  max-width: 1500px;
+  margin: 25px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.handling-box {
+  background: white;
+  padding: 20px;
+  border: 1px solid #e1e5e9;
+  border-radius: 10px;
+}
+
+/* Footer */
+
+.accounts-footer {
+  max-width: 1500px;
+  margin: 25px auto;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-button {
+  padding: 11px 25px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #293440;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background: #1f2831;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .accounts-container {
+    padding: 15px;
+  }
+
+  .accounts-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .financial-year {
+    width: 100%;
+  }
+
+  .handling-section {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-box {
+    width: 100%;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+}
+

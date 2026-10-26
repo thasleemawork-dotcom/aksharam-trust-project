@@ -1,0 +1,479 @@
+/* =========================================
+   AKSHARAM TRUST — ASSIGN STAFF WORK
+========================================= */
+
+.assign-work-page {
+  min-height: 100vh;
+  padding: 20px;
+  background: #f3f9fd;
+  color: #24445b;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.assign-work-page *,
+.assign-work-page *::before,
+.assign-work-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.assign-work-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d7e8f5;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 80, 130, 0.12);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.assign-work-header {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 25px;
+  background: #075b98;
+  color: #ffffff;
+}
+
+.assign-work-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.assign-work-header-icon {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 25px;
+}
+
+.assign-work-header h2 {
+  margin: 0 0 4px;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.assign-work-header p {
+  margin: 0;
+  color: #e0f2ff;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Close Button */
+
+.assign-work-close-btn {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.assign-work-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.assign-work-content {
+  padding: 20px 25px;
+}
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.assign-work-section {
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid #d6eaf8;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.assign-work-section:last-child {
+  margin-bottom: 0;
+}
+
+.assign-work-section-title {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  border-bottom: 1px solid #d6eaf8;
+  background: #e4f2fd;
+  color: #075b98;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.assign-work-section-title span:first-child {
+  font-size: 17px;
+}
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.assign-work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px 20px;
+  padding: 18px;
+}
+
+.assign-work-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.assign-work-full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+.assign-work-form-group label {
+  margin: 0;
+  padding: 0;
+  color: #244b68;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.assign-work-form-group label b {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+/* =========================================
+   INPUTS, SELECTS AND TEXTAREA
+========================================= */
+
+.assign-work-form-group input,
+.assign-work-form-group select,
+.assign-work-form-group textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  outline: none;
+  border: 1px solid #c8e1f2;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #405563;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Input and Select Height */
+
+.assign-work-form-group input,
+.assign-work-form-group select {
+  height: 39px;
+  padding: 0 11px;
+}
+
+/* Select Dropdown */
+
+.assign-work-form-group select {
+  cursor: pointer;
+}
+
+.assign-work-form-group select:disabled {
+  background: #f1f5f8;
+  color: #8797a4;
+  cursor: not-allowed;
+  border-color: #dce6ed;
+}
+
+/* Textarea */
+
+.assign-work-form-group textarea {
+  min-height: 100px;
+  padding: 11px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+/* Placeholder */
+
+.assign-work-form-group input::placeholder,
+.assign-work-form-group textarea::placeholder {
+  color: #9aabb7;
+}
+
+/* Focus Effect */
+
+.assign-work-form-group input:focus,
+.assign-work-form-group select:focus,
+.assign-work-form-group textarea:focus {
+  border-color: #0ba8e8;
+  box-shadow: 0 0 0 3px rgba(11, 168, 232, 0.09);
+}
+
+/* Date Input */
+
+.assign-work-form-group input[type="date"] {
+  cursor: pointer;
+}
+
+/* =========================================
+   READ-ONLY FIELDS
+========================================= */
+
+.assign-work-page
+  .assign-work-form-group
+  .assign-work-readonly {
+  background: #f4f9fd;
+  color: #526b7c;
+  border-color: #d6e6f1;
+  cursor: default;
+}
+
+.assign-work-page
+  .assign-work-form-group
+  .assign-work-readonly:focus {
+  border-color: #d6e6f1;
+  box-shadow: none;
+}
+
+/* =========================================
+   HELPER TEXT
+========================================= */
+
+.assign-work-help-text {
+  display: block;
+  margin-top: 2px;
+  color: #71899b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   DESCRIPTION CHARACTER COUNT
+========================================= */
+
+.assign-work-character-count {
+  align-self: flex-end;
+  color: #8096a5;
+  font-size: 10px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.assign-work-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 25px;
+  border-top: 1px solid #e0edf5;
+  background: #f8fcff;
+}
+
+/* =========================================
+   RESET AND SUBMIT BUTTONS
+========================================= */
+
+.assign-work-reset-btn,
+.assign-work-submit-btn {
+  min-height: 39px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 22px;
+  border-radius: 7px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Reset Button */
+
+.assign-work-reset-btn {
+  border: 1px solid #9bcce8;
+  background: #ffffff;
+  color: #0875bd;
+}
+
+.assign-work-reset-btn:hover {
+  border-color: #0ba8e8;
+  background: #eef8ff;
+}
+
+/* Assign Work Button */
+
+.assign-work-submit-btn {
+  border: 1px solid #078be0;
+  background: #078be0;
+  color: #ffffff;
+}
+
+.assign-work-submit-btn:hover {
+  transform: translateY(-1px);
+  border-color: #075b98;
+  background: #075b98;
+}
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
+
+.assign-work-reset-btn:focus-visible,
+.assign-work-submit-btn:focus-visible,
+.assign-work-close-btn:focus-visible {
+  outline: 3px solid rgba(11, 168, 232, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+  .assign-work-page {
+    padding: 12px;
+  }
+
+  .assign-work-content {
+    padding: 15px;
+  }
+
+  .assign-work-header {
+    padding: 13px 17px;
+  }
+
+  .assign-work-header h2 {
+    font-size: 20px;
+  }
+
+  .assign-work-grid {
+    gap: 14px;
+    padding: 15px;
+  }
+
+  .assign-work-footer {
+    padding: 14px 15px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 520px) {
+  .assign-work-page {
+    padding: 8px;
+  }
+
+  .assign-work-container {
+    border-radius: 10px;
+  }
+
+  .assign-work-header {
+    min-height: 70px;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .assign-work-header-icon {
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
+    font-size: 21px;
+  }
+
+  .assign-work-header h2 {
+    font-size: 17px;
+  }
+
+  .assign-work-header p {
+    font-size: 10px;
+  }
+
+  .assign-work-close-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 26px;
+  }
+
+  .assign-work-content {
+    padding: 12px;
+  }
+
+  .assign-work-section-title {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .assign-work-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+    padding: 13px;
+  }
+
+  .assign-work-full-width {
+    grid-column: auto;
+  }
+
+  .assign-work-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 12px;
+  }
+
+  .assign-work-reset-btn,
+  .assign-work-submit-btn {
+    width: 100%;
+  }
+}

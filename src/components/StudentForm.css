@@ -1,0 +1,644 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.student-page {
+  min-height: 100vh;
+  background: #f3f9fd;
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #24445b;
+}
+
+.student-form {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 80, 130, 0.15);
+  border: 1px solid #d7e8f5;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.student-header {
+  min-height: 65px;
+  height: auto;
+  background: #075b98;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 25px;
+}
+
+.student-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.student-title h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.graduation-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.student-title p,
+.student-title small {
+  margin: 3px 0 0;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.close-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: white;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================
+   ADD / EDIT BUTTONS
+========================================= */
+
+.form-mode {
+  padding: 18px 25px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mode-btn {
+  border: 1px solid #b9ddf4;
+  background: white;
+  color: #075b98;
+  padding: 12px 28px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mode-btn:hover {
+  background: #eef8ff;
+}
+
+.mode-btn.active {
+  background: #078be0;
+  color: white;
+  border-color: #078be0;
+}
+
+.mode-btn.active-edit {
+  background: #eef8ff;
+  color: #075b98;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(280px, 1fr);
+  gap: 20px;
+  padding: 15px 25px 20px;
+  align-items: stretch;
+}
+
+.form-left {
+  min-width: 0;
+}
+
+.form-right {
+  min-width: 0;
+  border: 1px solid #d7e9f7;
+  border-radius: 10px;
+  padding: 15px;
+  background: #fbfdff;
+}
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.form-section {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d6eaf8;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.section-title {
+  min-height: 52px;
+  background: #e4f2fd;
+  color: #075b98;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 9px 15px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.section-title span {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  padding: 12px 15px;
+  min-width: 0;
+}
+
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  padding: 12px 15px;
+  min-width: 0;
+}
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.form-group label {
+  color: #244b68;
+  font-size: 12px;
+  font-weight: 600;
+  padding-left: 2%;
+  padding-top: 1%;
+  line-height: 1.5;
+}
+
+.form-group label b {
+  color: #e74c3c;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 39px;
+  border: 1px solid #c8e1f2;
+  border-radius: 7px;
+  padding: 0 11px;
+  background: white;
+  color: #405563;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  height: 40px;
+  min-height: 40px;
+  resize: vertical;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #0ba8e8;
+  box-shadow: 0 0 0 2px rgba(11, 168, 232, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aabb7;
+}
+
+/* =========================================
+   INPUT WITH ICON
+========================================= */
+
+.input-box {
+  width: 100%;
+  min-width: 0;
+  height: 39px;
+  border: 1px solid #c8e1f2;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  background: white;
+}
+
+.input-box:focus-within {
+  border-color: #0ba8e8;
+  box-shadow: 0 0 0 2px rgba(11, 168, 232, 0.08);
+}
+
+.input-box span {
+  flex-shrink: 0;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.input-box input,
+.input-box select {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   PHOTO
+========================================= */
+
+.photo-box {
+  text-align: center;
+  padding: 15px 10px 20px;
+}
+
+.photo-placeholder {
+  width: 125px;
+  height: 125px;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 50%;
+  background: #e5f0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+  color: #397cc0;
+  border: 3px solid #f0f6ff;
+  overflow: hidden;
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.upload-btn {
+  display: block;
+  width: 180px;
+  max-width: 100%;
+  margin: 15px auto 7px;
+  padding: 10px;
+  border: 1px solid #0b8ee2;
+  border-radius: 7px;
+  color: #0879c4;
+  background: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background: #eef8ff;
+}
+
+.upload-btn input {
+  display: none;
+}
+
+.photo-box small {
+  display: block;
+  color: #8b9ca8;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* =========================================
+   SUMMARY
+========================================= */
+
+.summary-box {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d6eaf8;
+  border-radius: 9px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.summary-title {
+  background: #eaf6ff;
+  color: #075b98;
+  font-weight: 700;
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.summary-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15px minmax(0, 1fr);
+  padding: 7px 12px;
+  font-size: 11px;
+  gap: 5px;
+}
+
+.summary-row span {
+  color: #527084;
+}
+
+.summary-row b {
+  color: #075b98;
+}
+
+.summary-row strong {
+  color: #405563;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   NOTE
+========================================= */
+
+.note-box {
+  margin-top: 18px;
+  background: #edf8ff;
+  border: 1px solid #cbe8f9;
+  border-radius: 9px;
+  padding: 13px;
+  display: flex;
+  gap: 10px;
+}
+
+.note-icon {
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #0ba8e8;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.note-box h4 {
+  color: #075b98;
+  margin: 0 0 5px;
+  font-size: 13px;
+}
+
+.note-box p {
+  color: #628094;
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.form-footer {
+  border-top: 1px solid #e0edf5;
+  background: #f8fcff;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Smaller Cancel and Save Student buttons */
+.cancel-btn,
+.save-btn {
+  flex: 0 1 260px;
+  width: 260px;
+  max-width: 260px;
+  min-width: 0;
+  height: 42px;
+  padding: 10px 18px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cancel-btn {
+  border: 1px solid #9bcce8;
+  background: white;
+  color: #0875bd;
+}
+
+.cancel-btn:hover {
+  background: #eef8ff;
+}
+
+.save-btn {
+  border: none;
+  background: #078be0;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #075b98;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+  .form-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-right {
+    order: -1;
+  }
+
+  .photo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .photo-placeholder {
+    margin: 0;
+  }
+
+  .upload-btn {
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .student-page {
+    padding: 10px;
+  }
+
+  .student-form {
+    border-radius: 10px;
+  }
+
+  .student-header {
+    min-height: 65px;
+    padding: 10px 15px;
+    gap: 8px;
+  }
+
+  .student-title {
+    gap: 8px;
+  }
+
+  .student-title h2 {
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .graduation-icon {
+    font-size: 24px;
+  }
+
+  .close-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 26px;
+  }
+
+  .form-layout {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .form-grid,
+  .three-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-mode {
+    padding: 12px;
+  }
+
+  .mode-btn {
+    padding: 10px 15px;
+  }
+
+  /* Compact buttons on smaller screens */
+  .form-footer {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    flex: 1 1 0;
+    width: auto;
+    max-width: none;
+    height: 40px;
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .student-title h2 {
+    font-size: 18px;
+  }
+
+  .student-title {
+    gap: 6px;
+  }
+
+  .graduation-icon {
+    font-size: 21px;
+  }
+
+  .form-footer {
+    flex-direction: row;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    flex: 1 1 0;
+    width: auto;
+    max-width: none;
+    padding: 10px 5px;
+    font-size: 11px;
+  }
+}

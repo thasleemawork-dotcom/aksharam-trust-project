@@ -1,0 +1,490 @@
+/* =========================================
+   DOCUMENT PAGE
+========================================= */
+
+.document-page {
+  min-height: 100vh;
+  padding: 30px;
+  background: #f5faff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.document-page * {
+  box-sizing: border-box;
+}
+
+.document-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.viewdocument-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 30px 35px;
+  min-height: 120px;
+
+  background: linear-gradient(
+    115deg,
+    #075b98,
+    #087fc1
+  );
+
+  border-radius: 13px;
+  color: #ffffff;
+  margin-bottom: 2x0px;
+
+  box-shadow: 0 5px 18px rgba(7, 91, 152, 0.12);
+}
+
+.viewdocument-header-icon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: #075b98;
+  border-radius: 50%;
+  font-size: 43px;
+}
+
+.viewdocument-header-text h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.viewdocument-header-text p {
+  margin: 0;
+  font-size: 15px;
+  color: #eaf6ff;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.document-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 45px;
+
+  padding: 35px 32px 28px;
+
+  background: #ffffff;
+  border: 1px solid #d8eafa;
+  border-radius: 13px;
+
+  box-shadow: 0 4px 15px rgba(7, 91, 152, 0.06);
+}
+
+/* =========================================
+   FIELD STYLING
+========================================= */
+
+.document-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.document-field > label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 14px;
+
+  color: #174777;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.field-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  font-size: 20px;
+}
+
+.required {
+  color: #e53935;
+  margin-left: -6px;
+}
+
+/* =========================================
+   INPUTS AND SELECT
+========================================= */
+
+.document-field input:not([type="file"]),
+.document-field select {
+  width: 100%;
+  height: 45px;
+
+  padding: 0 18px;
+
+  background: #ffffff;
+  border: 1.5px solid #c9dff4;
+  border-radius: 9px;
+
+  color: #334e68;
+  font-family: inherit;
+  font-size: 16px;
+
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.document-field input::placeholder {
+  color: #8295ad;
+}
+
+.document-field input:focus,
+.document-field select:focus {
+  border-color: #0ba8e8;
+
+  box-shadow: 0 0 0 3px rgba(11, 168, 232, 0.12);
+}
+
+.document-field select {
+  cursor: pointer;
+}
+
+/* Automatically filled fields */
+
+.document-field input[readonly] {
+  background: #f0f4f8;
+  color: #71849c;
+  cursor: default;
+}
+
+/* =========================================
+   FILE UPLOAD SECTION
+========================================= */
+
+.document-file-field {
+  grid-column: 1 / -1;
+}
+
+.document-upload-box {
+  position: relative;
+  width: 100%;
+  min-height: 215px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px dashed #b4ddff;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #f4faff,
+    #f9fcff
+  );
+
+  transition: all 0.25s ease;
+}
+
+.document-upload-box:hover {
+  border-color: #0785d1;
+  background: #eef8ff;
+}
+
+.document-upload-box input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 50px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.document-upload-label {
+  width: 100%;
+  min-height: 215px;
+  padding: 25px 15px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 49px;
+  line-height: 1.2;
+}
+
+.upload-main-text {
+  color: #0876c5;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.upload-sub-text {
+  color: #7589a6;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.selected-file-name {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+
+  color: #16814a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================
+   STATUS MESSAGES
+========================================= */
+
+.document-message {
+  grid-column: 1 / -1;
+
+  padding: 14px 16px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.document-error {
+  color: #b42318;
+  background: #fff1f0;
+  border: 1px solid #ffc9c5;
+}
+
+.document-success {
+  color: #176b3a;
+  background: #edfff3;
+  border: 1px solid #b8ebc8;
+}
+
+/* =========================================
+   BUTTON SECTION
+========================================= */
+
+.document-form-actions {
+  grid-column: 1 / -1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 8px;
+  padding-top: 25px;
+
+  border-top: 1px solid #e1edf8;
+}
+
+/* Reset Button */
+
+.document-reset-btn {
+  min-width: 165px;
+  height: 55px;
+
+  padding: 0 25px;
+
+  border: 1.5px solid #0785f5;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #0876d1;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.document-reset-btn:hover {
+  background: #eef7ff;
+  border-color: #075b98;
+}
+
+/* Upload Button */
+
+.document-submit-btn {
+  min-width: 245px;
+  min-height: 55px;
+
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    110deg,
+    #0876d1,
+    #0789e8
+  );
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 650;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.document-submit-btn:hover {
+  background: linear-gradient(
+    110deg,
+    #075b98,
+    #0876d1
+  );
+
+  box-shadow: 0 5px 12px rgba(7, 91, 152, 0.2);
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .document-page {
+    padding: 22px;
+  }
+
+  .document-header {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .document-header-icon {
+    width: 75px;
+    height: 75px;
+    font-size: 35px;
+  }
+
+  .document-header-text h1 {
+    font-size: 27px;
+  }
+
+  .document-form {
+    gap: 25px;
+    padding: 28px 24px;
+  }
+
+  .document-field input:not([type="file"]),
+  .document-field select {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .document-page {
+    padding: 14px;
+  }
+
+  .document-header {
+    min-height: auto;
+    padding: 22px 18px;
+    gap: 15px;
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .document-header-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 28px;
+  }
+
+  .document-header-text h1 {
+    font-size: 21px;
+  }
+
+  .document-header-text p {
+    font-size: 13px;
+  }
+
+  .document-form {
+    grid-template-columns: 1fr;
+    gap: 23px;
+
+    padding: 22px 16px;
+  }
+
+  .document-file-field,
+  .document-form-actions,
+  .document-message {
+    grid-column: 1;
+  }
+
+  .document-field > label {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .document-field input:not([type="file"]),
+  .document-field select {
+    height: 51px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .document-upload-box,
+  .document-upload-label {
+    min-height: 190px;
+  }
+
+  .upload-icon {
+    font-size: 40px;
+  }
+
+  .upload-main-text {
+    font-size: 15px;
+  }
+
+  .upload-sub-text {
+    font-size: 12px;
+  }
+
+  .document-form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .document-reset-btn,
+  .document-submit-btn {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+  }
+}

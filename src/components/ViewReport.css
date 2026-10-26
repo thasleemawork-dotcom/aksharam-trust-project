@@ -1,0 +1,316 @@
+/* =========================================
+   VIEW REPORT PAGE
+========================================= */
+
+.view-report-page {
+  min-height: calc(100vh - 78px);
+}
+
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
+
+.nav-module.active {
+  background: #0ba8e8;
+  color: #ffffff;
+  border-radius: 7px;
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.report-summary-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.report-summary-cards .student-summary-card {
+  min-height: 95px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-summary-cards .student-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(0, 80, 130, 0.1);
+}
+
+/* =========================================
+   SEARCH AND DATE FILTER
+========================================= */
+
+.report-filter-section {
+  flex-wrap: wrap;
+}
+
+.report-filter-section .search-box {
+  min-width: 220px;
+}
+
+.report-date-filter {
+  width: 190px;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #cddfe9;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #24445b;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.report-date-filter:focus {
+  border-color: #075b98;
+  box-shadow: 0 0 0 3px rgba(7, 91, 152, 0.08);
+}
+
+/* =========================================
+   REPORT TABLE
+========================================= */
+
+.report-table {
+  min-width: 1100px;
+}
+
+.report-table th {
+  white-space: nowrap;
+}
+
+.report-table td {
+  vertical-align: middle;
+}
+
+.report-project-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+  max-width: 260px;
+  white-space: normal;
+}
+
+.report-project-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e4f2fd;
+  border-radius: 8px;
+  font-size: 17px;
+}
+
+.report-project-cell strong {
+  color: #24445b;
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.report-student-id {
+  display: inline-block;
+  padding: 5px 9px;
+  background: #eef8ff;
+  color: #075b98;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   VIEW REPORT MODAL
+========================================= */
+
+.report-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(20, 42, 60, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.report-modal {
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.2);
+  animation: reportModalOpen 0.2s ease-out;
+}
+
+@keyframes reportModalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal header */
+
+.report-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 22px 25px;
+  border-bottom: 1px solid #e1edf4;
+}
+
+.report-modal-header h3 {
+  margin: 0;
+  color: #075b98;
+  font-size: 21px;
+}
+
+.report-modal-header p {
+  margin: 6px 0 0;
+  color: #718796;
+  font-size: 13px;
+}
+
+.report-modal-close {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 7px;
+  background: #f0f6fa;
+  color: #536b7a;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.report-modal-close:hover {
+  background: #fdeaea;
+  color: #c62828;
+}
+
+/* Modal details */
+
+.report-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 25px;
+}
+
+.report-details-grid > div {
+  min-width: 0;
+  padding: 15px;
+  background: #f7fbfe;
+  border: 1px solid #e1edf4;
+  border-radius: 8px;
+}
+
+.report-details-grid span {
+  display: block;
+  margin-bottom: 7px;
+  color: #718796;
+  font-size: 12px;
+}
+
+.report-details-grid strong {
+  display: block;
+  color: #24445b;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* Modal footer */
+
+.report-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 18px 25px;
+  border-top: 1px solid #e1edf4;
+}
+
+.report-close-btn,
+.report-edit-btn {
+  min-height: 40px;
+  padding: 0 17px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.report-close-btn {
+  border: 1px solid #d7e8f5;
+  background: #ffffff;
+  color: #526d7e;
+}
+
+.report-close-btn:hover {
+  background: #f3f9fd;
+}
+
+.report-edit-btn {
+  border: none;
+  background: #075b98;
+  color: #ffffff;
+}
+
+.report-edit-btn:hover {
+  background: #064c80;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+  .report-summary-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .report-filter-section .search-box {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .report-summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .report-filter-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .report-filter-section .search-box,
+  .report-date-filter,
+  .report-filter-section .reset-filter-btn {
+    width: 100%;
+  }
+
+  .report-details-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .report-modal-header {
+    padding: 18px;
+  }
+
+  .report-modal-footer {
+    padding: 15px 18px;
+  }
+}

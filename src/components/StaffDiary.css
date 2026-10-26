@@ -1,0 +1,432 @@
+* {
+  box-sizing: border-box;
+}
+
+.staff-diary-page {
+  min-height: 100vh;
+  background: #f3f9fd;
+  padding: 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #24445b;
+}
+
+.staff-diary-form {
+  max-width: 1280px;
+  margin: auto;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 80, 130, 0.15);
+  border: 1px solid #d7e8f5;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.diary-header {
+ height: 65px;
+  background: #075b98;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.diary-icon {
+  font-size: 28px;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-left p {
+  margin: 3px 0 0;
+  color: #6dd7ff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.header-left p span {
+  margin: 0 10px;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.close-btn {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+/* =====================================
+   STAFF INFORMATION
+===================================== */
+
+.staff-info {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    1.1fr
+    0.9fr
+    1.4fr;
+
+  gap: 10px;
+
+  padding: 10px 15px;
+
+  background: white;
+}
+
+.info-box {
+  border: 1px solid #d9e7f3;
+  border-radius: 7px;
+  background: #f9fcff;
+
+  padding: 10px 15px;
+}
+
+.info-box label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #174f80;
+  font-size: 13px;
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+.info-icon {
+  font-size: 20px;
+  color: #174f80;
+}
+
+.info-box input {
+  width: 100%;
+  height: 32px;
+
+  border: 1px solid #d4e2ed;
+  border-radius: 5px;
+
+  padding: 5px 10px;
+
+  background: white;
+
+  color: #4b5e6e;
+  font-size: 13px;
+}
+
+.info-box input:read-only {
+  background: #ffffff;
+  cursor: default;
+}
+
+/* =====================================
+   DAY BUTTONS
+===================================== */
+
+.day-buttons {
+  display: flex;
+  gap: 0;
+}
+
+.day-buttons button {
+  flex: 1;
+
+  height: 32px;
+
+  border: 1px solid #d6e3ef;
+  background: #f7fafc;
+
+  color: #34536b;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: default;
+}
+
+.day-buttons button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.day-buttons button:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.day-buttons .active-day {
+  background: #1769d1;
+  color: white;
+  border-color: #1769d1;
+}
+
+/* =====================================
+   TABLE
+===================================== */
+
+.diary-table-container {
+  margin: 0 15px;
+
+  border: 1px solid #d6e4f0;
+  border-radius: 5px;
+
+  overflow-x: auto;
+  background: white;
+}
+
+.diary-table {
+  width: 100%;
+  min-width: 1000px;
+
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.diary-table thead {
+  background: #dcecfb;
+}
+
+.diary-table th {
+  height: 35px;
+
+  padding: 7px 10px;
+
+  text-align: left;
+
+  color: #164f80;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  border-right: 1px solid #c9ddeb;
+}
+
+.diary-table td {
+  height: 35px;
+
+  padding: 4px 10px;
+
+  border-top: 1px solid #e0eaf2;
+  border-right: 1px solid #e0eaf2;
+
+  vertical-align: middle;
+}
+
+/* =====================================
+   COLUMN WIDTHS
+===================================== */
+
+.number-column {
+  width: 48px;
+  text-align: center !important;
+}
+
+.task-column {
+  width: 34%;
+}
+
+.status-column {
+  width: 30%;
+}
+
+.remarks-column {
+  width: 25%;
+}
+
+/* =====================================
+   NUMBER
+===================================== */
+
+.task-number {
+  text-align: center;
+  color: #28516f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =====================================
+   INPUTS
+===================================== */
+
+.diary-table input[type="text"] {
+  width: 100%;
+  height: 27px;
+
+  border: 1px solid #d6e3ec;
+  border-radius: 5px;
+
+  padding: 4px 9px;
+
+  outline: none;
+
+  font-size: 12px;
+  color: #334f63;
+}
+
+.diary-table input[type="text"]:focus {
+  border-color: #3988d7;
+  box-shadow: 0 0 0 2px rgba(57, 136, 215, 0.08);
+}
+
+.diary-table input::placeholder {
+  color: #9aaebe;
+}
+
+/* =====================================
+   STATUS
+===================================== */
+
+.status-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.status-options label {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  color: #405a6d;
+
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.status-options input[type="radio"] {
+  appearance: none;
+
+  width: 14px;
+  height: 14px;
+
+  border: 1.5px solid #b9c8d5;
+  border-radius: 50%;
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+.status-options input[type="radio"]:checked {
+  border-color: #1976d2;
+}
+
+.status-options input[type="radio"]:checked::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  background: #1976d2;
+
+  border-radius: 50%;
+
+  top: 2px;
+  left: 2px;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.form-footer {
+  border-top: 1px solid #e0edf5;
+  background: #f8fcff;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel-btn,
+.save-btn {
+  padding: 11px 25px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  border: 1px solid #9bcce8;
+  background: white;
+  color: #0875bd;
+}
+
+.save-btn {
+  border: none;
+  background: #078be0;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #075b98;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 900px) {
+
+  .diary-header {
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .header-right {
+    display: none;
+  }
+
+  .staff-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .staff-info {
+    grid-template-columns: 1fr;
+  }
+
+  .header-left h1 {
+    font-size: 22px;
+  }
+
+  .diary-icon {
+    width: 45px;
+    height: 52px;
+    font-size: 27px;
+  }
+
+}
